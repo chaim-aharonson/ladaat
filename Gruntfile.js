@@ -47,6 +47,17 @@ module.exports = function(grunt) {
                 ext: '.min.js'
             }
         },
+        sassy: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'scss',
+                    src: ['*.scss'],
+                    dest: 'css/main.css',
+                    ext: '.css'
+                }]
+            }
+        },
 		recess: {
 			options: {
 				compile: true,
@@ -82,25 +93,35 @@ module.exports = function(grunt) {
 					debounceDelay: 250
 				}
 			},
-			recess: {
-				files: 'less/*.less',
-				tasks: ['recess']
-			}
+			recess: [
+				{
+					files: 'less/*.less',
+					tasks: ['recess']
+				},
+                {
+                    files: 'scss/*.scss',
+                    tasks: ['sassy']
+                }
+            ]
 		},
         open: {
             all: {
                 path: 'http://localhost:3001/demo.html'
+            },
+			index: {
+                path: 'http://localhost:3001/index.html'
             }
         }
 	});
-
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     // Loading Grunt-tasks from node_modules folder
-    grunt.loadTasks('tasks');
+    //grunt.loadTasks('tasks');
 
     // Register tasks for development and production
 	grunt.registerTask('default', ['jshint','uglify','recess']);
 	// Register tasks for development using watch
-    grunt.registerTask('dev', ['watch']);
+    grunt.registerTask('dev', ['express','open:index','watch']);
+    grunt.registerTask('sass', ['sassy']);
 
     // Register task to see the Demo page using localhost:3001
     grunt.registerTask('demo', ['express','open','watch']);

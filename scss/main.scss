@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+/*$imagesPathPrefix: '/static/_react/dist/style/images/';
+$fontsPathPrefix: '/static/_react/dist/style/fonts/';*/
+// Base
+$baseFontSize: 13px !default;
+//$baseFontFamily: Arial, sans-serif !default;
+$baseFontFamily: 'Open Sans', sans-serif !default;
+$baseLineHeight: 1.5 !default;
+$textColor: #000;
+// Site direction
+// -----------------
+$htmlDirection: ltr !default;
+// Mouse Selection
+/// -----------------
+$selectionColor: #ecf7ff !default;
+$selectionBackgroundColor: #0072a3 !default;
+
+// Core
+@import "core/_mixins";
+@import "core/_reset";
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: $baseFontFamily;
+    font-size: 12px;
+    line-height: $baseLineHeight;
+    color: $textColor;
+    background-color: #f0f;
+    height: 100%;
+    overflow-y: auto;
+}
+svg{
+    display: none;
+}
+.italic-text{
+    font-style: italic;
+}
+.bold-text{
+    font-weight: 700;
+}
+
+input, button{
+    outline: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
