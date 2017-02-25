@@ -47,17 +47,6 @@ module.exports = function(grunt) {
                 ext: '.min.js'
             }
         },
-        sassy: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'scss',
-                    src: ['*.scss'],
-                    dest: 'css/main.css',
-                    ext: '.css'
-                }]
-            }
-        },
 		recess: {
 			options: {
 				compile: true,
@@ -113,7 +102,7 @@ module.exports = function(grunt) {
             }
         }
 	});
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    // grunt.loadNpmTasks('grunt-contrib-cssmin');
     // Loading Grunt-tasks from node_modules folder
     //grunt.loadTasks('tasks');
 
@@ -121,7 +110,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['jshint','uglify','recess']);
 	// Register tasks for development using watch
     grunt.registerTask('dev', ['express','open:index','watch']);
-    grunt.registerTask('sass', ['sassy']);
 
     // Register task to see the Demo page using localhost:3001
     grunt.registerTask('demo', ['express','open','watch']);
