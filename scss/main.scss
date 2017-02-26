@@ -19,6 +19,10 @@ $selectionBackgroundColor: #0072a3 !default;
 // Core
 @import "core/_mixins";
 @import "core/_reset";
+
+// Components
+@import "components/_header";
+@import "components/_promo";
 html {
     height: 100%;
 }
@@ -32,12 +36,7 @@ body {
     height: 100%;
     overflow-y: auto;
 }
-svg{
-    display: none;
-}
-.italic-text{
-    font-style: italic;
-}
+
 .bold-text{
     font-weight: 700;
 }
@@ -53,4 +52,9 @@ input, button{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.content-wrapper{
+    max-width:1040px;
+    margin:0 auto;
 }

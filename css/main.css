@@ -109,6 +109,19 @@ table {
   -o-box-sizing: border-box;
   box-sizing: border-box; }
 
+.header {
+  background-color: #fafafa;
+  border-bottom: 1px solid #b2b2b2; }
+  .header .logo-wrap {
+    text-align: center;
+    vertical-align: bottom; }
+
+.sub-header {
+  line-height: 122px;
+  font-size: 1.4em;
+  background-color: #fff;
+  border-bottom: 8px solid #fafafa; }
+
 html {
   height: 100%; }
 
@@ -121,12 +134,6 @@ body {
   background-color: #fff;
   height: 100%;
   overflow-y: auto; }
-
-svg {
-  display: none; }
-
-.italic-text {
-  font-style: italic; }
 
 .bold-text {
   font-weight: 700; }
@@ -141,5 +148,9 @@ input, button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+.content-wrapper {
+  max-width: 1040px;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=main.css.map */
